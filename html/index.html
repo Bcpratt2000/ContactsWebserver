@@ -8,29 +8,27 @@
 		    background-color: #f1f1f1;
 		}
 	</style>
-</head>	
+</head>
 <body onload="startGame()">
 	<script>
 		function submit(){
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function(){
 				if(this.readyState == 4 & this.status == 200){
-					
-	</script>
-	
-	First name:<br>
-	<input type="text" name="firstname"><br>
-	Last name:<br>
-	<input type="text" name="lastname"><br>
-	E-Mail:<br>
-        <input type="text" name="email"><br>
-	Address:<br>
-        <input type="text" name="address"><br>
-	Phone Number:<br>
-        <input type="text" name="phonenumber"><br>
+					document.write("Button pressed");
+				}
+			}
+		}
 
-	<br>
-	<button onmouseup="submit()">Submit</button>
+	</script>
+
+	<form name='inputform' method='post'>
+		<input type="text" placeholder='firstname' name='firstname'>
+		<input type="text" placeholder='lastname' name='lastname'>
+		<input type="text" placeholder='email' name='email'>
+		<input type="text" placeholder='address' name='address'>
+		<input type="text" placeholder='phonenumber' name='phonenumber'>
+		<button onmouseup="">Submit</button>
+	</form>
 </body>
 </html>
-
