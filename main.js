@@ -15,13 +15,16 @@ http.createServer(function(req, res){
 			break;
 
 		case 'POST':
-		var data = getHtmlFile("/");
-		//respond
-		res.writeHead(200, {'Content-Type': 'text/html'});
-		res.write(data);
-		res.end();
-				break;
-		}
+    	let body = '';
+    	req.on('data', chunk => {
+        	body += chunk.toString(); // convert Buffer to string
+    	});
+    	req.on('end', () => {
+        	console.log(body);
+					res.writeHead(204, {'Content-Type': 'text/html'});
+        	res.end();
+    	});
+			}
 }).listen(80);
 
 
@@ -34,7 +37,6 @@ function getHtmlFile(path){
 	if(path == '/'){
 		path = "index.html";
 	}
-
 	//read requested file, implement 404 errors
 	var data
 	try{

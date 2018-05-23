@@ -3,23 +3,29 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<style>
-		canvas {
-		    border:1px solid #d3d3d3;
-		    background-color: #f1f1f1;
+		button{
+			text-align: center;
 		}
-	</style>
+		input {
+    	margin-top: 4px;
+    	margin-bottom: 4px;
+		}
+		input {
+			text-align: center;
+		}
+</style>
 </head>
-<body onload="startGame()">
-	<script>
-		function submit(){
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function(){
-				if(this.readyState == 4 & this.status == 200){
-					document.write("Button pressed");
-				}
-			}
-		}
 
+<body>
+
+	<script>
+		function clearFields(){
+			document.getElementById('firstname').value='';
+			document.getElementById('lastname').value='';
+			document.getElementById('email').value='';
+			document.getElementById('address').value='';
+			document.getElementById('phonenumber').value='';
+		}
 	</script>
 
 	<form name='inputform' method='post'>
@@ -28,7 +34,10 @@
 		<input type="text" placeholder='email' name='email'>
 		<input type="text" placeholder='address' name='address'>
 		<input type="text" placeholder='phonenumber' name='phonenumber'>
-		<button onmouseup="">Submit</button>
+		<button onclick="clearFields()">Submit</button>
 	</form>
+	<br>
+	<br>
+	<button onclick="location.href='localContacts.html';">Go to Local Application</button>
 </body>
 </html>
