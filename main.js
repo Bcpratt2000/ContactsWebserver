@@ -15,7 +15,7 @@ http.createServer(function(req, res){
 			break;
 
 		case 'POST':
-    	let body = '';
+    	var body = '';
     	req.on('data', chunk => {
         	body += chunk.toString(); // convert Buffer to string
     	});
